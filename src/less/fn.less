@@ -1,0 +1,34 @@
+.image-set(@url) {
+  @url2: replace(@url, "\.(jpe?g|png)$", "@2x.$1");
+  background-repeat: no-repeat;
+  background-image: url(@url);
+  background-image: image-set(url(@url) 1x, url(@url2) 2x);
+}
+
+.square(@size) {
+  width: @size;
+  height: @size;
+}
+
+.center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide-text() {
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+/*
+ * 单行文字溢出时出现省略号，需设定宽度
+ */
+ .text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

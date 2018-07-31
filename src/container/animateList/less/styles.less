@@ -1,0 +1,48 @@
+@import '~less/variables.less';
+@import '~less/fn.less';
+
+@keyframes risk {
+  from {
+    opacity: -36px;
+  }
+
+  // 以1280的为准
+  to {
+    top: 52px * 16;
+  }
+}
+
+:global {
+  .realtime-risk {
+    &-list {
+      position: relative;
+      height: 52px * 12;
+      overflow: hidden;
+    }
+
+    &-item {
+      position: absolute;
+      left: 0;
+      top: -36px;
+      width: 100%;
+      :local {
+        animation: risk 28s linear;
+      }
+
+      h3 {
+        margin: 0;
+        .text-overflow();
+        font-size: 12px;
+        line-height: 20px;
+        color: @main-color;
+      }
+
+      p {
+        margin: 0;
+        font-size: 12px;
+        line-height: 16px;
+        color: #666;
+      }
+    }
+  }
+}
