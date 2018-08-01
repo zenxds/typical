@@ -77,11 +77,7 @@ class Page extends Component {
   }
 
   fetchList() {
-    // if (!isEqual(this.data, data)) {
-
-    // }
-
-    this.pool = this.pool.concat([
+    const data = [
       {
         tradeName: '手机转账',
         tradeAmount: 80302
@@ -116,7 +112,12 @@ class Page extends Component {
         tradeName: '支付宝扣款',
         tradeAmount: 53477
       }
-    ])
+    ]
+
+    // if (this.pool.length < 1000 && !isEqual(this.data, data)) {
+    // this.data = data
+    this.pool = this.pool.concat(data)
+    // }
   }
 
   /**

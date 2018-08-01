@@ -1,39 +1,25 @@
-import request from '../../../util/request'
+import { get, post } from '../../../util/request'
 
 export const getList = params => {
-  return request({
-    url: '/list.json',
+  return get('/list.json', {
     params
   })
 }
 
 export const getItem = params => {
-  return request({
-    url: '/detail.json',
+  return get('/detail.json', {
     params
   })
 }
 
-export const addItem = params => {
-  return request({
-    method: 'post',
-    url: '/add.json',
-    data: params
-  })
+export const addItem = data => {
+  return post('/add.json', data)
 }
 
-export const editItem = params => {
-  return request({
-    method: 'post',
-    url: '/edit.json',
-    data: params
-  })
+export const editItem = data => {
+  return post('/edit.json', data)
 }
 
-export const deleteItem = params => {
-  return request({
-    method: 'post',
-    url: '/delete.json',
-    data: params
-  })
+export const deleteItem = data => {
+  return post('/delete.json', data)
 }

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default (config={}) => {
+export default function request(config={}) {
   config = Object.assign({
     withCredentials: true,
     timeout: 30 * 1000
@@ -15,4 +15,19 @@ export default (config={}) => {
       throw new Error(msg || 'request error')
     }
   })
+}
+
+export function get(url, config={}) {
+  return request(Object.assign(config, {
+    method: 'get',
+    url
+  }))
+}
+
+export function post(url, data, config={}) {
+  return request(Object.assign(config, {
+    method: 'get',
+    url,
+    data
+  }))
 }

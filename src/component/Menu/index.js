@@ -18,7 +18,7 @@ const menuCfg = [
   {
     title: '首页',
     link: '/',
-    icon: 'home'
+    icon: ''
   },
   {
     title: '列表带新增',
